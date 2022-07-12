@@ -24,9 +24,10 @@ class _BtnActionsHomeState extends State<BtnActionsHome> {
       style: ElevatedButton.styleFrom(
         primary: const Color.fromRGBO(0, 102, 204, 1),
         padding: const EdgeInsets.symmetric(
-          horizontal: 20,
+          horizontal: 30,
           vertical: 10,
         ),
+        maximumSize: const Size(150, 70),
         alignment: Alignment.center,
         elevation: 3,
       ),

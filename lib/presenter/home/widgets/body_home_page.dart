@@ -1,4 +1,6 @@
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'button_actions_home.dart';
 import 'container_layout_home.dart';
@@ -49,7 +51,11 @@ class _BodyHomePageState extends State<BodyHomePage> {
             BtnActionsHome(
               title: 'Limpar',
               btnIcon: Icons.clear_all_rounded,
-              functionOnPressed: () {},
+              functionOnPressed: () {
+                nameController.clear();
+                instaController.clear();
+                workController.clear();
+              },
             ),
           ],
         ),
@@ -63,6 +69,7 @@ class _BodyHomePageState extends State<BodyHomePage> {
           btnIcon: Icons.copy_all_rounded,
           functionOnPressed: () {},
         ),
+        const SizedBox(height: 20),
       ],
     );
   }

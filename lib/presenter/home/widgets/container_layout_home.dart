@@ -32,6 +32,8 @@ class ContainerLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 650,
+      height: 300,
       margin: const EdgeInsets.symmetric(
         vertical: 15,
       ),
