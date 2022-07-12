@@ -10,10 +10,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final nameController = TextEditingController();
-  final instaController = TextEditingController();
-  final workController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,12 +18,8 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         backgroundColor: const Color.fromRGBO(0, 102, 204, 0.8),
       ),
-      body: SingleChildScrollView(
-        child: BodyHomePage(
-          nameController: nameController,
-          instaController: instaController,
-          workController: workController,
-        ),
+      body: const SingleChildScrollView(
+        child: BodyHomePage(),
       ),
     );
   }

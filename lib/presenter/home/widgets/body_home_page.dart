@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-import 'button_generate_home.dart';
+import 'button_actions_home.dart';
 import 'container_layout_home.dart';
 import 'input_user_home.dart';
 
-class BodyHomePage extends StatelessWidget {
-  const BodyHomePage({
-    Key? key,
-    required this.nameController,
-    required this.instaController,
-    required this.workController,
-  }) : super(key: key);
+class BodyHomePage extends StatefulWidget {
+  const BodyHomePage({Key? key}) : super(key: key);
 
-  final TextEditingController nameController;
-  final TextEditingController instaController;
-  final TextEditingController workController;
+  @override
+  State<BodyHomePage> createState() => _BodyHomePageState();
+}
+
+class _BodyHomePageState extends State<BodyHomePage> {
+  final nameController = TextEditingController();
+  final instaController = TextEditingController();
+  final workController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +35,29 @@ class BodyHomePage extends StatelessWidget {
           prefixIcon: Icons.work_rounded,
           controller: workController,
         ),
-        BtnActionsHome(
-          title: 'Gerar',
-          btnIcon: Icons.arrow_circle_down_rounded,
-          functionOnPressed: () {},
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BtnActionsHome(
+              title: 'Gerar',
+              btnIcon: Icons.arrow_circle_down_rounded,
+              functionOnPressed: () {
+                setState(() {});
+              },
+            ),
+            const SizedBox(width: 20),
+            BtnActionsHome(
+              title: 'Limpar',
+              btnIcon: Icons.clear_all_rounded,
+              functionOnPressed: () {},
+            ),
+          ],
         ),
-        ContainerLayout(),
+        ContainerLayout(
+          name: nameController.text,
+          instagram: instaController.text,
+          job: workController.text,
+        ),
         BtnActionsHome(
           title: 'Copiar',
           btnIcon: Icons.copy_all_rounded,
