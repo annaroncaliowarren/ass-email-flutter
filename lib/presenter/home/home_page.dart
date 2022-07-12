@@ -1,6 +1,6 @@
-import 'package:ass_email/presenter/home/widgets/container_layout_home.dart';
-import 'package:ass_email/presenter/home/widgets/input_user_home.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/body_home_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,8 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final nameController = TextEditingController();
-  final emailController = TextEditingController();
-  final phoneController = TextEditingController();
+  final instaController = TextEditingController();
   final workController = TextEditingController();
 
   @override
@@ -21,33 +20,13 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Gerador de Assinatura - Email'),
         elevation: 0,
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromRGBO(0, 102, 204, 0.8),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            InputUserHome(
-              label: 'Nome',
-              prefixIcon: Icons.person,
-              controller: nameController,
-            ),
-            InputUserHome(
-              label: 'Email',
-              prefixIcon: Icons.email_rounded,
-              controller: emailController,
-            ),
-            InputUserHome(
-              label: 'Telefone',
-              prefixIcon: Icons.phone,
-              controller: phoneController,
-            ),
-            InputUserHome(
-              label: 'Cargo',
-              prefixIcon: Icons.work_rounded,
-              controller: workController,
-            ),
-            const ContainerLayout(),
-          ],
+        child: BodyHomePage(
+          nameController: nameController,
+          instaController: instaController,
+          workController: workController,
         ),
       ),
     );

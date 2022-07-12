@@ -29,7 +29,7 @@ class _InputUserHomeState extends State<InputUserHome> {
         horizontal: 16,
       ),
       decoration: BoxDecoration(
-        color: Colors.green.shade50,
+        color: const Color.fromRGBO(0, 102, 204, 0.1),
         borderRadius: BorderRadius.circular(10),
       ),
       child: TextField(
